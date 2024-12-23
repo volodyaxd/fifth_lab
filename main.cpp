@@ -235,7 +235,7 @@ void findDollPricesForSixYearOlds(const std::string& filename) {
     Toy toy;
     bool found = false;
     while (inFile.read(reinterpret_cast<char*>(&toy), sizeof(Toy))) {
-        if (toy.ageFrom <= 6 && toy.ageTo >= 6 && std::string(toy.name).find("Кукла") || std::string(toy.name).find("кукла") != std::string::npos) {
+        if (toy.ageFrom <= 6 && toy.ageTo >= 6 && std::string(toy.name).find("кукла") != std::string::npos) {
             std::cout << "Название: " << toy.name << ", Стоимость: " << toy.price << " руб." << std::endl;
             found = true;
         }
